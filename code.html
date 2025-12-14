@@ -1,0 +1,61 @@
+<!-- === File: code.html === -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Editor</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Local Ace Editor Files -->
+    <script src="ace-builds/src-noconflict/ace.js"></script>
+    <script src="ace-builds/src-noconflict/ext-language_tools.js"></script>
+    <script src="ace-builds/src-noconflict/mode-html.js"></script>
+    <script src="ace-builds/src-noconflict/theme-monokai.js"></script>
+</head>
+<body>
+<div class="topbar">
+    <a href="index.html">Home</a>
+    <a href="code.html">Code Editor</a>
+    <a href="custom.html">Custom Buttons</a>
+    <a href="todo1.html">Todo 1</a>
+    <a href="todo2.html">Todo 2</a>
+</div>
+
+<h2>HTML Editor</h2>
+<div id="editor"></div>
+<button onclick="runCode()">Run HTML</button>
+<iframe id="output" style="width:100%; height:300px; border:1px solid #ccc; margin-top:10px;"></iframe>
+
+<script>
+    // Initialize Ace Editor
+    const editor = ace.edit("editor");
+    editor.setTheme("ace/theme/monokai");
+    editor.session.setMode("ace/mode/html");
+    editor.setOptions({
+        enableBasicAutocompletion: true,
+        enableLiveAutocompletion: true,
+        fontSize: "14px"
+    });
+
+    // Default HTML code
+    const defaultCode = `<!DOCTYPE html>
+<html>
+<head>
+  <title>My Page</title>
+</head>
+<body>
+
+</body>
+</html>`;
+
+    editor.setValue(defaultCode, -1); // -1 moves cursor to start
+
+    // Run the HTML code in the iframe
+    function runCode() {
+        const iframe = document.getElementById('output');
+        iframe.srcdoc = editor.getValue();
+    }
+</script>
+</body>
+</html>

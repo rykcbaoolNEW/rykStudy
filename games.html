@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #1a1a1a;
+    color: white;
+    }
+
+    /* Top Navbar */
+    #navbar {
+    width: 100%;
+    background: #111;
+    padding: 15px;
+    display: flex;
+    justify-content: left;
+    gap: 20px;
+    border-bottom: 2px solid #333;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    pointer-events: none; /* disable clicks until login */
+    opacity: 0.4;
+    }
+
+    #navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    }
+
+    /* Login Box */
+    #loginBox {
+    width: 300px;
+    margin: 150px auto;
+    padding: 20px;
+    background: #222;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #000;
+    text-align: center;
+    }
+
+    input {
+    width: 90%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 5px;
+    border: none;
+    }
+
+    button {
+    width: 95%;
+    padding: 10px;
+    margin-top: 10px;
+    background: #3a78ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    }
+
+    #content {
+    display: none;
+    margin-top: 100px;
+    padding: 20px;
+    }
+    </style>
+</head>
+<body>
+<div id="navbar">
+    <a href="games.html">Games</a>
+    <a href="#">Other Stuff</a>
+</div>
+</body>
+</html>
